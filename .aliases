@@ -40,6 +40,8 @@ alias calculator='gnome-calculator'
 alias cls='printf "\033c"'
 alias copy='xclip -selection clipboard'
 alias yank='/usr/bin/yank -- xclip -selection c'
+alias standardnotes='chromium --app=https://app.standardnotes.org'
+alias whatsapp='chromium --app=https://web.whatsapp.com'
 
 monitor() { watch -n1 -t "lsof -i -n|awk '{print \$1, \$2, \$9}'|column -t"; }
 gi() { curl "https://www.gitignore.io/api/$@"; }

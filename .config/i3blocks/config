@@ -4,7 +4,8 @@ command=mpc current
 interval=1
 
 [battery]
-command=$SCRIPT_DIR/battery3/battery3
+command=$SCRIPT_DIR/battery/battery
+label= 
 markup=pango
 interval=30
 
@@ -14,17 +15,12 @@ command=/usr/lib/i3blocks/cpu_usage
 interval=1
 
 [disk]
-label=
+label= 
 command=df -h -P -l $HOME | awk '/\/.*/ { print $4; exit 0 }'
 interval=10
 
-[mail]
-label=
-command=find $HOME/Mail/*/INBOX/new/ -type f | wc -l
-interval=5
-
 [volume]
-label=♪
+label=♪ 
 command=amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1
 interval=1
 
