@@ -197,6 +197,11 @@ exec --no-startup-id dunst
 exec --no-startup-id numlockx on
 exec --no-startup-id mpc clear && mpc load all && mpc random on
 exec --no-startup-id synclient TapButton1=1 TapButton2=3
+exec --no-startup-id protonmail-bridge
+exec --no-startup-id TogglDesktop
+exec --no-startup-id toggl
+exec --no-startup-id standardnotes
+exec --no-startup-id telegram-desktop
 # exec --no-startup-id orage
 
 # Startup
@@ -209,6 +214,7 @@ assign [class="Iceweasel|Firefox" instance="Navigator"] $ws3
 assign [instance="chromium"] $ws3
 assign [instance="wekan*"] $ws4
 assign [class="Vlc|mpv"] $ws5
+assign [instance="mailspring"] $ws9
 
 # Shortcuts
 bindsym 0xff61 exec --no-startup-id scrot ~/Images/Screens/screenshot_%Y_%m_%d_%H_%M_%S.png
@@ -273,3 +279,5 @@ bindsym Control+Shift+Down move scratchpad
 bindsym Control+Shift+Up scratchpad show
 
 focus_follows_mouse no
+
+bindsym $mod+Shift+M fullscreen disable; floating enable; resize set 650 490; sticky enable; move window to position 2550 1330; border pixel 0

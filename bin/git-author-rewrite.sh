@@ -1,6 +1,8 @@
 #!/bin/sh
 
-git filter-branch --env-filter '
+export FILTER_BRANCH_SQUELCH_WARNING=1
+
+git filter-branch -f --env-filter '
 OLD_NAME="OLD_NAME"
 CORRECT_NAME="CORRECT_NAME"
 CORRECT_EMAIL="CORRECT_EMAIL"

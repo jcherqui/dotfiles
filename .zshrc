@@ -61,6 +61,7 @@ export PATH=$PATH:$HOME/bin:/usr/local/bin:$GOPATH/bin:~/.gem/ruby/2.5.0/bin:$(e
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+source $HOME/.private_aliases
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -91,6 +92,7 @@ export EDITOR="vim"
 export WINEARCH=win32
 export WINEPREFIX=~/.wine32 # Wine prefix to use
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+# export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/home/ston3o/.local/share/flatpak/exports/share
 eval `dircolors ~/.dir_colors`
 [ -f ~/.private_aliases ] && source ~/.private_aliases
 
@@ -123,6 +125,8 @@ disable -r time
 alias time='time -p '
 
 export EDITOR='vim'
+
+export TMPDIR="/$HOME/.tmp" # Fix node cross-device link not permitted
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

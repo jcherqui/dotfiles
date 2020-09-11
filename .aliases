@@ -42,9 +42,10 @@ alias copy='xclip -selection clipboard'
 alias yank='/usr/bin/yank -- xclip -selection c'
 alias standardnotes='chromium --app=https://app.standardnotes.org'
 alias whatsapp='chromium --app=https://web.whatsapp.com'
+alias deemix='chromium --app=http://0.0.0.0:6595'
 
 monitor() { watch -n1 -t "lsof -i -n|awk '{print \$1, \$2, \$9}'|column -t"; }
-gi() { curl "https://www.gitignore.io/api/$@"; }
+gi() { curl -L "https://www.gitignore.io/api/$@"; }
 youtube-dl-mp3() { youtube-dl $1 --extract-audio --audio-format mp3; }
 streamer() { youtube-dl -o - "$1" | mpv -; }
 reinstall() { sudo pacman -S "$1" $(pacman -Qi "$1"|grep -i depend|cut -d: -f2); }
@@ -95,3 +96,11 @@ genssl(){
         openssl x509 -req -days 365 -in $1.csr -signkey $1.key -out $1.crt
     fi
 }
+
+screenshot () {
+    pageres --filename=screenshot -d 5 --overwrite $1
+    imgur screenshot.png
+    # cleanimg screenshot.png
+}
+
+alias xmind="flatpak run net.xmind.ZEN --no-sandbox"
